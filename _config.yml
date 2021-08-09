@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Flantiers goûte les meilleurs flans pour vous.
 baseurl: "" # the subpath of your site, e.g. /blog
 logo: /assets/images/main_flan.jpg
-url: "https://www.flantiers.heroku.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://flantiers.herokuapp.com/" # the base hostname & protocol for your site, e.g. http://example.com
 author: "Flantiers"
 twitter:
   username: Flantiers
