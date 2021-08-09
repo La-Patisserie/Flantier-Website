@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <h1>
+            <a href="{% tl flantiers %}" class="navbar-brand ms-4">
+                <img src="/assets/images/main_flan_30px.jpg" alt="">
+                {% t flantiers %}
+            </a>
+        </h1>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end pe-5" id="navbarNav">
+            <ul class="navbar-nav">
+                {% for item in site.data.navigation %}
+                <a href="{% unless item.link contains 'http' %}{{ site.baseurl }}{% endunless %}{{ item.link }}" class="nav-link link {% if page.url == item.link %}active{% endif %}">{% t item.name %}</a>
+                {% endfor %}
+
+                {% if site.languages.size > 1 %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       id="langDropdown"
+                       role="button"
+                       data-mdb-toggle="dropdown"
+                       aria-expanded="false">
+                        {% t site.lang %}
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu shadow" aria-labelledby="langDropdown">
+                        {% for language in site.languages %}
+                            {% if site.lang != language %}
+                                <li>
+                                    {% if site.languages[0] == language %}
+                                        <a href="{{ site.baseurl_root }}{{ page.url }}" class="dropdown-item link bg-darker-hover">{% t language %}</a>
+                                    {% else %}
+                                        <a href="{{ site.baseurl_root }}/{{ language }}{{ page.url }}" class="dropdown-item link bg-darker-hover">{% t language %}</a>
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

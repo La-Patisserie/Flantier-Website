@@ -1,0 +1,24 @@
+---
+title: Home
+page_title: flantiers
+namespace: flantiers
+permalink: /
+---
+
+<h1 class="my-4">{% t landing_page.title %}</h1>
+
+<div class="container">
+    <div>
+        <h2>{% t landing_page.reviews %}</h2>
+    </div>
+    <div>
+        <div class="row">
+            {% for article in site.posts %}
+            {% include article_preview.html article=article %}
+            {% endfor %}
+        </div>
+        <div class="text-end m-4 py-2">
+            <button type="button" class="btn outline-button">{% t landing_page.all_articles %}</button>
+        </div>
+    </div>
+</div>

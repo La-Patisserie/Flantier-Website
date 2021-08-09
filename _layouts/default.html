@@ -1,0 +1,43 @@
+---
+layout: compress
+---
+
+<!doctype html>
+<html>
+    <head>
+        <title>
+            {% if page.page_title %}
+            {{ site.title }}
+            {% else %}
+            {{ page.title }} | {{ site.title }}
+            {% endif %}
+        </title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link rel="shortcut icon" type="image/png" href="/assets/images/main_flan_30px.jpg">
+        {% feed_meta %}
+        {% seo %}
+        <meta name="twitter:image" content="{{site.url}}/assets/images/main_flan.jpg" />
+        <meta property="og:image" content="{{site.url}}/assets/images/main_flan.jpg" />
+        <meta itemprop="image" content="{{site.url}}/assets/images/main_flan.jpg" />
+        <link rel="stylesheet" href="/assets/css/styles.css">
+        {% if jekyll.environment == "production" %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--        #TODO-->
+<!--        <script async src="https://www.googletagmanager.com/gtag/js?id=XXXXX"></script>-->
+<!--        <script>-->
+<!--            window.dataLayer = window.dataLayer || [];-->
+<!--            function gtag(){dataLayer.push(arguments);}-->
+<!--            gtag('js', new Date());-->
+
+<!--            gtag('config', 'G-BFRXX8VNZD');-->
+<!--        </script>-->
+        {% endif %}
+    </head>
+    <body class="container-fluid px-0">
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+    {% include scripts.html %}
+    </body>
+</html>
