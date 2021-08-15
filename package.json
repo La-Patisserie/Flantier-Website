@@ -1,0 +1,15 @@
+{
+  "name": "flantiers-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/GuillaumeDSM/flantiers.git",
+  "author": "Flantiers",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@popperjs/core": "^2.6.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0-beta1",
+    "mdb-ui-kit": "^3.1.0"
+  }
+}
